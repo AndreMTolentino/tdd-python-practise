@@ -4,14 +4,12 @@ class Fraction:
         self.numerator = numerator
         self.denominator = denominator
 
+    def __eq__(self, other):
+        return self.numerator == other.numerator and \
+               self.denominator == other.denominator
+
     def add(self, Number):
         return Fraction(self.numerator + Number.numerator, self.denominator)
 
-    def intValue(self):
-        return self.numerator
-
-    def Numerator(self):
-        return self.numerator
-
-    def Denominator(self):
-        return self.denominator
+    def hashcode(self):
+        return self.numerator * 19 + self.denominator
