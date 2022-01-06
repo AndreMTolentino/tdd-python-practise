@@ -17,3 +17,7 @@ class FractionEqualsTests(unittest.TestCase):
 
     def test_diff_integers(self):
         self.assertNotEqual(Fraction(3), Fraction(4))
+
+    def test_negative_denominator(self):
+        self.assertEqual(Fraction(1, 2), Fraction(-1, -2))
+        self.assertEqual(Fraction(-1, 2), Fraction(1, -2))

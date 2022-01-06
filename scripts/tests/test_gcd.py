@@ -1,6 +1,6 @@
 import unittest
 from scripts.main import Fraction
-
+from scripts.numberthoery import NumberTheory
 
 class GreatestCommonDivisorTest(unittest.TestCase):
 
@@ -32,3 +32,8 @@ class GreatestCommonDivisorTest(unittest.TestCase):
     def test_negatives(self):
         self.assertEqual(4, self.gcd(-24, 28))
         self.assertEqual(4, self.gcd(24, -28))
+
+    def test_zero(self):
+        self.assertEqual(1, self.gcd(1, 0))
+        self.assertEqual(5, self.gcd(0, 5))
+        self.assertEqual(0, self.gcd(0, 0))
