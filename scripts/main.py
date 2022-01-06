@@ -9,7 +9,11 @@ class Fraction:
                self.denominator == other.denominator
 
     def add(self, Number):
-        return Fraction(self.numerator + Number.numerator, self.denominator)
+        if self.denominator != Number.denominator:
+            return Fraction(self.numerator * Number.denominator + Number.numerator * self.denominator,
+                            self.denominator * Number.denominator)
+        else:
+            return Fraction(self.numerator + Number.numerator, self.denominator)
 
     def hashcode(self):
         return self.numerator * 19 + self.denominator

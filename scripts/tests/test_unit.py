@@ -27,3 +27,6 @@ class TestFraction(unittest.TestCase):
     def test_sum_non_trivial_common_denominator(self):
         result = Fraction(1, 5).add(Fraction(2, 5))
         self.assertEqual(result, Fraction(3, 5))
+
+    def test_diff_denominators(self):
+        self.assertEqual(Fraction(5, 6), Fraction(1, 2).add(Fraction(1, 3)))
